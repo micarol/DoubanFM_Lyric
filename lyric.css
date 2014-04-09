@@ -1,0 +1,30 @@
+html,body {
+    height:380px;
+    width:350px;
+    padding:0;
+    margin:0;
+}
+
+.lyrics_div {
+	height:380px;
+    width:350px;
+    padding:4px;
+    color: rgb(163, 160, 161);
+    overflow-y: scroll;
+}
+.lyrics_now {
+    padding:4px;
+    color: rgb(238, 227, 236);
+}
+.mv_div {
+	height:380px;
+	width:350px;   
+    background-color: rgba(86,86,86,0.95);
+    border-radius: 5px 5px 5px 5px;
+    color: #FFF;
+    padding: 15px 20px 20px;
+    position: relative;
+    zoom: 1;
+    overflow-y: scroll;
+    z-index:999
+}
