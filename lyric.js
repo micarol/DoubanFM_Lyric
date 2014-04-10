@@ -39,6 +39,7 @@ DoubanFM.prototype.request_geci = function() {
 		var url = this.geci_entry_url(stored_song.song_name, stored_song.artist);
 		this.tmp_song_id = stored_song.id;
 		this.ajax_get(url);
+		this.flag = 1;
 	}
 }
 
@@ -52,6 +53,7 @@ DoubanFM.prototype.ajax_get = function(url) {
 				obj.deal_response(XHR.responseText);
 			} else {
 				obj.print_lyrics('获取歌词失败');
+				this.flag = -1;
 			}
 		} else {
 			obj.print_lyrics('歌词搜索中');
@@ -73,6 +75,8 @@ DoubanFM.prototype.deal_response = function(data) {
 		} else {
 			this.print_lyrics('没有找到歌词');
 		}
+	} else if(this.flag == -1) {
+		this.print_lyrics('error : ' + resp);
 	} else {
 		this.print_lyrics(this.format(data));
 		this.ajax_flag = 1;
